@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<style>
+:root {
+    --header_bg:rgb(12,129,152);
+    --header_color:white;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+h1,h2,h3,h4,h5 {
+    font-weight:normal;
+}
+body {
+    background:rgb(222, 242, 239);
+    color:#235;
+}
+header {
+    background:var(--header_bg);
+    color:var(--header_color);
+}
+header h1 {
+    font-size:20px;
+    padding:0 10px;
+    line-height:60px;
+    height:60px;
+}
+sidenav {
+    background:rgb(120, 188, 178);
+    width:240px;
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    overflow:auto;
+}
+header + sidenav {
+    top:60px;
+}
+sidenav a {
+    display:block;
+    color:#111;
+    text-decoration:none;
+    font-size:16px;
+    padding:7px 12px;
+}
+archive {
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    overflow:auto;
+}
+header ~ archive {
+    top:60px;
+}
+header + sidenav ~ archive {
+    left:240px;
+}
+archive section {
+    padding:20px;
+}
+section .ttl {
+    background:rgb(155, 213, 205);
+    margin:-20px 0 0 -20px;
+}
+</style>
+
+<header>
+    <h1>SamplePage Text...</h1>
+</header>
+
+<sidenav>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+</sidenav>
+
+<archive>
+    <section>
+        <div class="ttl">
+            <h2>Text Title Text...</h2>
+        </div>
+        <p>TextSample Text Samples</p>
+    </section>    
+</archive>
+</body>
+</html>
