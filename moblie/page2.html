@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <p class="icon" onclick="sidenav()" style="text-align:center;font-size:25px;"><label>○</label></p>
+    <p><label>Page1 Title Text Text</label></p>
+    <p class="icon"><label>...</label></p>
+</header>
+
+<div class="sidenav_bg" onclick="sidenav()"></div>
+<sidenav>
+    <p><a href="index.html">Home</a></p>
+    <p><a href="page1.html">page1</a></p>
+    <p><a href="page2.html">page2 (Form)</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+</sidenav>
+
+<archive>
+    <dl>
+        <dt>Value 1</dt>
+        <dd>
+            <ul><li><input type="text" placeholder="Value1 Text..."></li></ul>
+        </dd>
+        <dt>Value 2</dt>
+        <dd>
+            <ul><li><input type="text" placeholder="Value1 Text..."></li></ul>
+        </dd>
+        <dt>Value 3</dt>
+        <dd>
+            <ul>
+                <li><label><input type="radio" name="value3" value="1" checked>Radio Button 1</label></li>
+                <li><label><input type="radio" name="value3" value="2">Radio Button 2</label></li>
+                <li><label><input type="radio" name="value3" value="3">Radio Button 3</label></li>
+                <li><label><input type="radio" name="value3" value="4">Radio Button 4</label></li>
+            </ul>
+        </dd>
+        <dt>Value 4</dt>
+        <dd>
+            <ul>
+                <li>
+                    <label class="inline"><input type="radio" name="value4" value="1" checked>Radio 1</label>
+                    <label class="inline"><input type="radio" name="value4" value="2">Radio 2</label>
+                    <label class="inline"><input type="radio" name="value4" value="3">Radio 3</label>
+                    <label class="inline"><input type="radio" name="value4" value="4">Radio 4</label>
+                </li>
+            </ul>
+        </dd>
+        <dt>Value 5</dt>
+        <dd>
+            <ul>
+                <li>
+                    <select>
+                        <option value="1">Select Value1</option>
+                        <option value="2">Select Value2</option>
+                        <option value="3">Select Value3</option>
+                    </select>
+                </li>
+            </ul>
+        </dd>
+        <dt>Value 6</dt>
+        <dd>
+            <ul>
+                <li>
+                    <textarea placeholder="value6 text sample...."></textarea>
+                </li>
+            </ul>
+        </dd>
+        <dt>Value 7</dt>
+        <dd>
+            <ul>
+                    <li><label><input type="checkbox" value="1" checked>Checkbox 1</label></li>
+                    <li><label><input type="checkbox" name="value3" value="2">Checkbox 2</label></li>
+                    <li><label><input type="checkbox" name="value3" value="3">Checkbox 3</label></li>
+                    <li><label><input type="checkbox" name="value3" value="4">Checkbox 4</label></li>
+            </ul>
+        </dd>
+        <dt>Value 8</dt>
+        <dd>
+            <ul>
+                <li>
+                    <label class="inline"><input type="checkbox" value="value3" checked>Check 1</label>
+                    <label class="inline"><input type="checkbox" name="value3" value="2">Check 2</label>
+                    <label class="inline"><input type="checkbox" name="value3" value="3">Check 3</label>
+                    <label class="inline"><input type="checkbox" name="value3" value="4">Check 4</label>
+                </li>
+            </ul>
+        </dd>
+        <dt>Value 9</dt>
+        <dd>
+            <div class="m10"><button class="btn create_btn">File Upload</button></div>
+        </dd>
+        <dt>
+            <button class="btn">Submit</button>
+        </dt>
+    </dl>
+</archive>
+
+<script>
+let toggle = false;
+const sidenav = ()=>{
+    if (toggle) {
+        document.querySelector(".sidenav_bg").classList.remove("active");
+        document.querySelector("sidenav").classList.remove("active");
+        toggle = false;
+    }
+    else {
+        document.querySelector(".sidenav_bg").classList.add("active");
+        document.querySelector("sidenav").classList.add("active");
+        toggle = true;
+    }
+};
+</script>
+</body>
+</html>

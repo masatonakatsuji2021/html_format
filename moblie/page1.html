@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <p class="icon" onclick="sidenav()" style="text-align:center;font-size:25px;"><label>○</label></p>
+    <p><label>Page1 Title Text Text</label></p>
+    <p class="icon"><label>...</label></p>
+</header>
+
+<div class="sidenav_bg" onclick="sidenav()"></div>
+<sidenav>
+    <p><a href="index.html">Home</a></p>
+    <p><a href="page1.html">page1</a></p>
+    <p><a href="page2.html">page2 (Form)</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+</sidenav>
+
+<archive>
+    <dl>
+        <dt>Title Name TItle Name..</dt>
+        <dd>
+            <ul>
+                <li>
+                    <a href="#" class="arrow">
+                        <span>Name Sample Text...</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="arrow">
+                        <span>Name Sample Text...</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="arrow">
+                        <span>Name Sample Text...</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="arrow">
+                        <span>Name Sample Text...</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="arrow">
+                        <span>Name Sample Text...</span>
+                    </a>
+                </li>
+            </ul>
+        </dd>
+        <dt>Title Name TItle Name..</dt>
+        <dd>
+            <ul>
+                <li>
+                    <a href="#" class="plus">
+                        <span class="icon"></span>
+                        <span>Name Sample</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="plus">
+                        <span class="icon"></span>
+                        <span>Name Sample</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="plus">
+                        <span class="icon"></span>
+                        <span>Name Sample</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="plus">
+                        <span class="icon"></span>
+                        <span>Name Sample</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="plus">
+                        <span class="icon"></span>
+                        <span>Name Sample</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="plus">
+                        <span class="icon"></span>
+                        <span>Name Sample</span>
+                        <span style="color:red">(+00)</span>
+                    </a>
+                </li>
+            </ul>
+        </dd>
+        <dt>Title Name TItle Name..</dt>
+        <dd>
+            <ul>
+                <li>
+                    <label class="plus">
+                        <span class="icon"></span>
+                        <span>Name Sample</span>
+                    </label>
+                </li>
+                <li class="hauto">
+                    <ul>
+                        <li>
+                            <label class="plus">
+                                <span class="icon"></span>
+                                <span>Sub Name Sample</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="plus">
+                                <span class="icon"></span>
+                                <span>Sub Name Sample</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="plus">
+                                <span class="icon"></span>
+                                <span>Sub Name Sample</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="plus">
+                                <span class="icon"></span>
+                                <span>Sub Name Sample</span>
+                            </label>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </dd>
+    </dl>
+
+
+
+
+</archive>
+
+<script>
+let toggle = false;
+const sidenav = ()=>{
+    if (toggle) {
+        document.querySelector(".sidenav_bg").classList.remove("active");
+        document.querySelector("sidenav").classList.remove("active");
+        toggle = false;
+    }
+    else {
+        document.querySelector(".sidenav_bg").classList.add("active");
+        document.querySelector("sidenav").classList.add("active");
+        toggle = true;
+    }
+};
+</script>
+</body>
+</html>
