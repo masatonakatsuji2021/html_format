@@ -10,7 +10,6 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;    
     word-break: break-all;
     letter-spacing:0;
 }
@@ -20,6 +19,22 @@ h1,h2,h3,h4,h5 {
 body {
     background:rgb(255, 255, 255);
     color:#444;
+}
+a {
+    color:#666;
+    text-decoration:none;
+}
+.wk {
+    padding:15px;
+}
+.f_left {
+    float:left;
+}
+.f_right {
+    float:right;
+}
+.disabled {
+    color:gray;
 }
 header {
     background:var(--header_bg);
@@ -95,7 +110,7 @@ sidenav a {
     left:0;
 }
 archive {
-    position:absolute;
+    position:fixed;
     left:0;
     top:0;
     right:0;
@@ -104,9 +119,7 @@ archive {
     font-size:14px;
     line-height:1.3rem;
 }
-archive .wk {
-    padding:15px;
-}
+
 header ~ archive {
     top:50px;
 }
@@ -134,18 +147,23 @@ archive dl dt {
     display:block;
     font-weight:bold;
 }
-archive ul li a,
-archive ul li label {
+archive ul li > *{
     padding:10px 15px;
-    display:block;
+    display:table;
     background:white;
     color:#333;
     text-decoration:none;
     position:relative;
+    width:100%;
 }
-archive ul li a.inline,
-archive ul li label.inline {
+archive ul li.inline > * {
     display:inline-block;
+    width:auto;
+}
+archive ul li > * > * {
+    display:table-cell;
+    vertical-align:middle;
+    width:100%;
 }
 archive ul li .arrow:after{
     content:"";
@@ -169,18 +187,14 @@ archive ul li .plus:after{
     transform:translateY(-50%);
     right:15px;
 }
-archive ul li span {
-    display:inline-block;
-    vertical-align:middle;
-}
 archive ul li span.icon {
     background:rgba(0,0,0,0.2);
     width:20px;
     height:20px;
 }
-archive ul li input,
-archive ul li select,
-archive ul li textarea {
+input,
+select,
+textarea {
     display:block;
     width:100%;
     padding:0 15px;
@@ -190,16 +204,97 @@ archive ul li textarea {
     font-size:15px;
     outline:none;
 }
-archive ul li input[type=radio], 
-archive ul li input[type=checkbox] {
-    width:auto;    
-    height:auto;
+input[type=radio], 
+input[type=checkbox] {
+    appearance: none;;
+    width:22px;
+    height:22px;
+    padding:0;
     display:inline-block;
-    zoom:1.2;
     vertical-align:middle;
-    margin-right:10px;
+    border:solid 3px lightgray;
+    border-radius:4px;
+    position:relative;
+    transition-duration:300ms;
 }
-archive ul li textarea {
+input[type=radio]:after,
+input[type=checkbox]:after{
+    content:"";
+    display:block;
+    position:absolute;
+    opacity:0;
+    transition-duration:300ms;
+}
+input[type=radio]{
+    border-radius:50%;
+}
+input[type=radio]:after{
+    width:11px;
+    height:11px;
+    left:50%;
+    top:50%;
+    transform:translateX(-50%) translateY(-50%);
+    border-radius:50%;
+    background:rgb(37, 161, 33);
+}
+input[type=radio]:checked {
+    border:solid 3px rgb(37, 161, 33);
+}
+input[type=radio]:checked:after{
+    opacity:1;
+}
+input[type=radio][disabled],
+input[type=checkbox][disabled] {
+    border:solid 3px rgba(0,0,0,0.05);
+    background:rgba(0,0,0,0.05);
+}
+input[type=checkbox]:after {
+    content:"\02713";
+    width:20px;
+    height:20px;
+    zoom:1.1;
+    left:0;
+    top:0;
+    font-weight:bold;
+    line-height:18px;
+    text-align:center;
+    color:white;
+}
+input[type=checkbox]:checked:after {
+    opacity:1;
+}
+input[type=checkbox]:checked {
+    border:solid 3px rgb(37, 161, 33);
+    background:rgb(37, 161, 33);
+    opacity:1;
+}
+input[type=checkbox].switch {
+    width:44px;
+    border-radius:11px;
+    background:lightgray;
+}
+input[type=checkbox].switch:after{
+    content:"";
+    background:white;
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    left:0;
+    top:50%;
+    transform:translateY(-50%);
+    opacity:1;
+}
+input[type=checkbox].switch:checked {
+    background:rgb(37, 161, 33);
+}
+input[type=checkbox].switch:checked:after {
+    left:18px;
+}
+input[type=checkbox][disabled].switch {
+    border:solid 3px rgba(0,0,0,0.05);
+    background:rgba(0,0,0,0.05);
+}
+ textarea {
     line-height:1.5rem;
     min-height:200px;
     padding:10px 15px;
@@ -227,3 +322,7 @@ archive ul li textarea {
 }
 .m5 { margin:5px; }
 .m10 {margin:10px; }
+.mr5 { margin-right:5px; }
+.mr10 { margin-right:10px; }
+.ml5 { margin-left:5px; }
+.ml10 { margin-left:10px; }
