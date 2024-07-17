@@ -27,6 +27,15 @@ a {
 .wk {
     padding:15px;
 }
+.text_right {
+    text-align:right;
+}
+.text_center {
+    text-align:center;
+}
+.f_none {
+    float:none;
+}
 .f_left {
     float:left;
 }
@@ -326,3 +335,73 @@ input[type=checkbox][disabled].switch {
 .mr10 { margin-right:10px; }
 .ml5 { margin-left:5px; }
 .ml10 { margin-left:10px; }
+
+dialog {
+    position:fixed;
+    display:block;
+    z-index:-1;
+    opacity:0;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    transition-duration:300ms;
+    transition-property: opacity;;
+}
+dialog dwindow {
+    position:absolute;
+    z-index:-1;
+    background:white;
+    display:table;
+    width:100%;
+    max-width:75%;
+    top:50%;
+    left:50%;
+    opacity:0;
+    transform:translateX(-50%) translateY(-50%);
+    transition-duration:300ms;
+    transition-property: opacity;;
+}
+dialog dwindow.minimum {
+    max-width:inherit;
+    width:auto;
+}
+dialog dwindow.maximum{
+    max-width:90%
+}
+dialog dheader,
+dialog dfooter,
+dialog dcontent {
+    display:table-row;
+}
+dialog dheader > *,
+dialog dfooter > *,
+dialog dcontent > *{
+    display:table-cell;
+}
+dialog dheader > *{
+    padding:0 15px;
+    height:50px;
+    line-height:50px;
+    font-weight:bold;
+}
+dialog dfooter > * {
+    padding:10px 15px;
+    overflow:hidden;
+    zoom:1;
+}
+dialog dfooter > * > * {
+    float:left;
+}
+dialog dfooter > * > *.f_right {
+    float:right;
+}
+dialog.open {
+    opacity:1;
+    z-index:10;
+}
+dialog.open dwindow{
+    opacity:1;
+    z-index:10;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <p class="icon" onclick="sidenav()" style="text-align:center;font-size:25px;"><label>○</label></p>
+    <p><label>Page1 Title Text Text</label></p>
+    <p class="icon"><label>...</label></p>
+</header>
+
+<div class="sidenav_bg" onclick="sidenav()"></div>
+<sidenav>
+    <p><a href="index.html">Home</a></p>
+    <p><a href="page1.html">page1</a></p>
+    <p><a href="page2.html">page2 (Form)</a></p>
+    <p><a href="page3.html">page3 (Dialog)</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+    <p><a href="#">aaaaa</a></p>
+</sidenav>
+
+<archive>
+    <div class="wk">
+        <p><a onclick='dialog.open("test1")''>Test1 Open</a></p>
+        <p><a onclick='dialog.open("test2")''>Test1 Open</a></p>
+    </div>
+</archive>
+
+<dialog id="test1">
+    <dwindow>
+        <dheader>
+            <div>
+                Title text Text 
+            </div>
+        </dheader>
+        <dcontent>
+            <div class="wk">
+                Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample 
+            </div>
+        </dcontent>
+        <dfooter>
+            <div class="f_right">
+                <a onclick='dialog.close("test1")''>close</a>
+            </div>
+        </dfooter>
+    </dwindow>
+</dialog>
+
+<dialog id="test2">
+    <dwindow class="maximum">
+        <dcontent>
+            <div style="background:rgb(12, 104, 117);color:white;font-size:22px;height:300px;line-height:300px;text-align:center">Image Sample...</div>
+        </dcontent>
+        <dfooter>
+            <div>
+                <a onclick='dialog.open("test2a")'>test2A</a>
+                <a class="f_right" onclick='dialog.close("test2")''>close</a>
+            </div>
+        </dfooter>
+    </dwindow>
+</dialog>
+<dialog id="test2a">
+    <dwindow class="minimum">
+        <dcontent>
+            <div class="wk text_center">Test2a....OK!</div>
+        </dcontent>
+        <dfooter>
+            <div class="text_center">
+                <a class="f_none" onclick='dialog.close("test2a")''>close</a>
+            </div>
+        </dfooter>
+    </dwindow>
+</dialog>
+<script>
+
+let toggle = false;
+const sidenav = ()=>{
+    if (toggle) {
+        document.querySelector(".sidenav_bg").classList.remove("active");
+        document.querySelector("sidenav").classList.remove("active");
+        toggle = false;
+    }
+    else {
+        document.querySelector(".sidenav_bg").classList.add("active");
+        document.querySelector("sidenav").classList.add("active");
+        toggle = true;
+    }
+};
+
+const dialog = {
+    open: (dialogName) => {
+        const targetEl = document.querySelector("dialog#" + dialogName);
+        targetEl.classList.add("open");
+    },
+    close: (dialogName) => {
+        const targetEl = document.querySelector("dialog#" + dialogName);
+        targetEl.classList.remove("open");
+    },
+};
+</script>
+</body>
+</html>
