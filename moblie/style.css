@@ -15,6 +15,7 @@
 }
 h1,h2,h3,h4,h5 {
     font-weight:normal;
+    margin-bottom:30px;
 }
 body {
     background:rgb(255, 255, 255);
@@ -23,9 +24,12 @@ body {
 a {
     color:#666;
     text-decoration:none;
+    cursor:pointer;
 }
 .wk {
     padding:15px;
+    max-width:640px;
+    margin:0 auto;
 }
 .text_right {
     text-align:right;
@@ -331,10 +335,19 @@ input[type=checkbox][disabled].switch {
 }
 .m5 { margin:5px; }
 .m10 {margin:10px; }
+.m15 { margin:15px; }
+
 .mr5 { margin-right:5px; }
 .mr10 { margin-right:10px; }
+.mr15 { margin-right:15px; }
+
 .ml5 { margin-left:5px; }
 .ml10 { margin-left:10px; }
+.ml15 { margin-left:15px; }
+
+.mb5 { margin-bottom:5px; }
+.mb10 { margin-bottom:10px; }
+.mb15 { margin-bottom:15px; }
 
 dialog {
     position:fixed;
